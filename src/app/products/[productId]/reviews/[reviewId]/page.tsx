@@ -1,6 +1,6 @@
 // src/app/products/[productId]/page.tsx
 import React from "react";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 export default async function Page({
   params,
@@ -10,7 +10,8 @@ export default async function Page({
   const { reviewId, productId } = await params;
 
   if (parseInt(reviewId) > 1000) {
-    notFound();
+    // notFound();
+    redirect("/products"); // go to home
   }
 
   return (
