@@ -5,13 +5,21 @@ export const metadata = {
   title: "Blog",
 };
 
-const page = () => {
+const Blog = async () => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Internal delay");
+    }, 3000);
+  });
   return (
     <>
-      <div>Blog</div>
+      <div>
+        {" "}
+        <h1>My Blog</h1>
+      </div>
       <Link href="/about">Go to about</Link>
     </>
   );
 };
 
-export default page;
+export default Blog;
